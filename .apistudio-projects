@@ -1,1 +1,6 @@
-projects: {}
+projects:
+  test-oai-vcs:
+    id: S1mG5BH2
+    description: ''
+    tags: []
+    lastUpdated: 1789558046626
