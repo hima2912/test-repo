@@ -1,0 +1,20 @@
+kind: FreeFlowPolicySequence
+apiVersion: api.ibm.com/v1
+metadata:
+  name: freeflowpolicysequence-test-oai-vcs-lgu8w
+  namespace: test-oai-vcs
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  main:
+    - $ref: test-oai-vcs:ExtractIdentity-lgu8w:1.0
+    - $ref: test-oai-vcs:Authenticate-lgu8w:1.0
+    - $ref: test-oai-vcs:Authorize-lgu8w:1.0
+    - $ref: test-oai-vcs:If-lgu8w:1.0
+    - $ref: test-oai-vcs:OperationSwitch-lgu8w:1.0
+  monitoring:
+    $ref: test-oai-vcs:Telemetry-lgu8w:1.0

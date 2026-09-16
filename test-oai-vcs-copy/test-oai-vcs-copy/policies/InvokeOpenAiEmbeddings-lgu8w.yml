@@ -1,0 +1,21 @@
+kind: InvokeOpenAiEmbeddings
+apiVersion: api.ibm.com/v1
+metadata:
+  name: InvokeOpenAiEmbeddings-lgu8w
+  namespace: test-oai-vcs
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  apiKeySecret: dsafd
+  tlsClientProfile: tls-client-profile-default:1.0.0
+  cachePolicy:
+    cache:
+      expire:
+        static:
+          seconds: 60
+      scope:
+        narrowScope: {}
+      ignoreControlDirectives: true

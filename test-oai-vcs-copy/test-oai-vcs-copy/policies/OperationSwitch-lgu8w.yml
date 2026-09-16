@@ -1,0 +1,36 @@
+kind: OperationSwitch
+apiVersion: api.ibm.com/v1
+metadata:
+  name: OperationSwitch-lgu8w
+  namespace: test-oai-vcs
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  cases:
+    - conditions:
+        - verbPath:
+            path: /chat/completions
+            verb: POST
+      execute:
+        - $ref: test-oai-vcs:InvokeOpenAiChatCompletions-lgu8w:1.0
+    - conditions:
+        - verbPath:
+            path: /embeddings
+            verb: POST
+      execute:
+        - $ref: test-oai-vcs:InvokeOpenAiEmbeddings-lgu8w:1.0
+    - conditions:
+        - verbPath:
+            path: /models
+            verb: GET
+      execute:
+        - $ref: test-oai-vcs:InvokeOpenAiModels-lgu8w:1.0
+    - conditions:
+        - verbPath:
+            path: /models/{a_model_id}
+            verb: GET
+      execute:
+        - $ref: test-oai-vcs:InvokeOpenAiModelsId-lgu8w:1.0
