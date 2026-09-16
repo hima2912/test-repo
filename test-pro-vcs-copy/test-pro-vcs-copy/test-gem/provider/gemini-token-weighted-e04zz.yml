@@ -1,0 +1,19 @@
+kind: Quota
+apiVersion: api.ibm.com/v1
+metadata:
+  name: gemini-token-weighted-e04zz
+  namespace: test-pro-vcs
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  maxRequest: 1000
+  interval: 1s
+  extensions:
+    dp-nano-gateway:
+      apiVersion: api.ibm.com/v1
+      spec:
+        weightExpr: $variable('aiGeneratedTokenCount')
+        exceedAction: continue
+        intervalOffset: 0
+        dynamicValue: ''

@@ -1,0 +1,13 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: api-test-gem-e04zz
+  namespace: test-pro-vcs
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+spec:
+  api-spec:
+    $path: ./api-spec-e04zz.yml
+  policy-sequence:
+    - $ref: test-pro-vcs:freeflowpolicysequence-test-gem-e04zz:1.0

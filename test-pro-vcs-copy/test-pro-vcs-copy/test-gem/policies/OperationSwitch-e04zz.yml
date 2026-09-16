@@ -1,0 +1,48 @@
+kind: OperationSwitch
+apiVersion: api.ibm.com/v1
+metadata:
+  name: OperationSwitch-e04zz
+  namespace: test-pro-vcs
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  cases:
+    - conditions:
+        - verbPath:
+            path: /models/{a_model_id}:batchEmbedContents
+            verb: POST
+      execute:
+        - $ref: test-pro-vcs:InvokeGeminiBatchEmbedContents-e04zz:1.0
+    - conditions:
+        - verbPath:
+            path: /models/{a_model_id}:countTokens
+            verb: POST
+      execute:
+        - $ref: test-pro-vcs:InvokeGeminiCountTokens-e04zz:1.0
+    - conditions:
+        - verbPath:
+            path: /models/{a_model_id}:embedContent
+            verb: POST
+      execute:
+        - $ref: test-pro-vcs:InvokeGeminiEmbedContent-e04zz:1.0
+    - conditions:
+        - verbPath:
+            path: /models/{a_model_id}:generateContent
+            verb: POST
+      execute:
+        - $ref: test-pro-vcs:InvokeGeminiGenerateContent-e04zz:1.0
+    - conditions:
+        - verbPath:
+            path: /models
+            verb: GET
+      execute:
+        - $ref: test-pro-vcs:InvokeGeminiModels-e04zz:1.0
+    - conditions:
+        - verbPath:
+            path: /models/{a_model_id}
+            verb: GET
+      execute:
+        - $ref: test-pro-vcs:InvokeGeminiModelsId-e04zz:1.0

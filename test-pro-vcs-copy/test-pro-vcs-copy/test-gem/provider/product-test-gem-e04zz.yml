@@ -1,0 +1,14 @@
+kind: Product
+apiVersion: api.ibm.com/v1
+metadata:
+  name: product-test-gem-e04zz
+  namespace: test-pro-vcs
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+  description: ''
+spec:
+  apis:
+    - $ref: test-pro-vcs:api-test-gem-e04zz:1.0
+  plans:
+    - $ref: test-pro-vcs:plan-test-gem-e04zz:1.0

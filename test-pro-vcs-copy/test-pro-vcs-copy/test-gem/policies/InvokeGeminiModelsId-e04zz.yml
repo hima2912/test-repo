@@ -1,0 +1,22 @@
+kind: InvokeGeminiModelsId
+apiVersion: api.ibm.com/v1
+metadata:
+  name: InvokeGeminiModelsId-e04zz
+  namespace: test-pro-vcs
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  apiKeySecret: testgem
+  tlsClientProfile: tls-client-profile-default:1.0.0
+  cachePolicy:
+    cache:
+      expire:
+        static:
+          seconds: 60
+      scope:
+        narrowScope: {}
+      ignoreControlDirectives: true
+  model: $(a_model_id)
