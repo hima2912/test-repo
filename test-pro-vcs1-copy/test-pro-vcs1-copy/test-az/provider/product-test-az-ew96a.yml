@@ -1,0 +1,14 @@
+kind: Product
+apiVersion: api.ibm.com/v1
+metadata:
+  name: product-test-az-ew96a
+  namespace: test-pro-vcs1
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+  description: ''
+spec:
+  apis:
+    - $ref: test-pro-vcs1:api-test-az-ew96a:1.0
+  plans:
+    - $ref: test-pro-vcs1:plan-test-az-ew96a:1.0

@@ -1,0 +1,14 @@
+kind: If
+apiVersion: api.ibm.com/v1
+metadata:
+  name: If-ew96a
+  namespace: test-pro-vcs1
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  condition: ($pathParameter('a_model_id'))
+  execute:
+    - $ref: test-pro-vcs1:Set-ew96a:1.0

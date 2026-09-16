@@ -1,0 +1,13 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: api-test-az-ew96a
+  namespace: test-pro-vcs1
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+spec:
+  api-spec:
+    $path: ./api-spec-ew96a.yml
+  policy-sequence:
+    - $ref: test-pro-vcs1:freeflowpolicysequence-test-az-ew96a:1.0

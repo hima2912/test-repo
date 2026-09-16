@@ -1,0 +1,20 @@
+kind: FreeFlowPolicySequence
+apiVersion: api.ibm.com/v1
+metadata:
+  name: freeflowpolicysequence-test-az-ew96a
+  namespace: test-pro-vcs1
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  main:
+    - $ref: test-pro-vcs1:ExtractIdentity-ew96a:1.0
+    - $ref: test-pro-vcs1:Authenticate-ew96a:1.0
+    - $ref: test-pro-vcs1:Authorize-ew96a:1.0
+    - $ref: test-pro-vcs1:If-ew96a:1.0
+    - $ref: test-pro-vcs1:OperationSwitch-ew96a:1.0
+  monitoring:
+    $ref: test-pro-vcs1:Telemetry-ew96a:1.0
