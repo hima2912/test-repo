@@ -1,0 +1,24 @@
+kind: InvokeAzureOpenAiModels
+apiVersion: api.ibm.com/v1
+metadata:
+  name: InvokeAzureOpenAiModels-ew96a
+  namespace: test-pro-vcs1
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  apiKeySecret: sdsf
+  tlsClientProfile: tls-client-profile-default:1.0.0
+  opVersion: 2025-01-01-preview
+  resourceId: fdsg
+  cachePolicy:
+    cache:
+      expire:
+        static:
+          seconds: 60
+      scope:
+        narrowScope: {}
+      ignoreControlDirectives: true
+  deploymentId: fgdfg
