@@ -1,0 +1,20 @@
+kind: MCPServer
+apiVersion: api.ibm.com/v1
+metadata:
+  name: test-az-server-si0ad
+  namespace: new-vcs-project
+  version: "1.0"
+  tags: []
+  domain: mcp
+  labels:
+    origin: mcp-rest
+spec:
+  title: test-az MCP Server
+  protocolVersion: V2025_11_25
+  plans:
+    - $ref: new-vcs-project:new-vcs-project-plan-si0ad:1.0
+  policy-sequence:
+    - $ref: new-vcs-project:new-vcs-project-freeflowpolicysequence-si0ad:1.0
+  capabilities:
+    tools:
+      - $ref: new-vcs-project:test-az-tool-si0ad:1.0

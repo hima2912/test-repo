@@ -1,0 +1,14 @@
+kind: Plan
+apiVersion: api.ibm.com/v1
+metadata:
+  name: new-vcs-project-plan-si0ad
+  namespace: new-vcs-project
+  version: "1.0"
+  tags: []
+  description: ""
+  domain: mcp
+spec:
+  qos:
+    withQuota:
+      new-vcs-project-plan-si0ad-limit:
+        - $ref: new-vcs-project:new-vcs-project-quota-si0ad:1.0

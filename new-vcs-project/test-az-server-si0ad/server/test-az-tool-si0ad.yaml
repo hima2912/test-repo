@@ -1,0 +1,70 @@
+kind: MCPTools
+apiVersion: api.ibm.com/v1
+metadata:
+  name: test-az-tool-si0ad
+  namespace: new-vcs-project
+  version: "1.0"
+  tags: []
+  domain: mcp
+  labels:
+    api-spec: ./test-az-spec.yml
+spec:
+  tools:
+    - name: post_completions
+      description: Make a POST request to /chat/completions
+      inputSchema:
+        type: object
+        properties:
+          body:
+            type: string
+        required:
+          - body
+      title: post_completions
+      x-api-binding:
+        operationPath: /chat/completions
+        operationMethod: POST
+        api:
+          $path: ./test-az-spec.yml
+    - name: post_embeddings
+      description: Make a POST request to /embeddings
+      inputSchema:
+        type: object
+        properties:
+          body:
+            type: string
+        required:
+          - body
+      title: post_embeddings
+      x-api-binding:
+        operationPath: /embeddings
+        operationMethod: POST
+        api:
+          $path: ./test-az-spec.yml
+    - name: get_models
+      description: Make a GET request to /models
+      inputSchema:
+        type: object
+        properties: {}
+      title: get_models
+      x-api-binding:
+        operationPath: /models
+        operationMethod: GET
+        api:
+          $path: ./test-az-spec.yml
+    - name: get_a_model_id
+      description: Make a GET request to /models/{a_model_id}
+      inputSchema:
+        type: object
+        properties:
+          a_model_id:
+            description: a_model_id parameter
+            x-parameter-location: path
+            type: string
+        required:
+          - a_model_id
+      title: get_a_model_id
+      x-api-binding:
+        operationPath: /models/{a_model_id}
+        operationMethod: GET
+        api:
+          $path: ./test-az-spec.yml
